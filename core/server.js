@@ -1,9 +1,18 @@
 const config = require('flex-web-kit/builder/config'),
+    utils = require('flex-web-kit/builder/utils'),
     express = require('express'),
     colors = require('colors'),
     server = express();
 
-//const use = (req, res, next) => server.use(req, res, next);
+utils.folders('dist/web', (name, path) => {
+    console.log(path)
+    const file = require(path);
+    console.log(file)
+
+
+    //const use = (req, res, next) => server.use(req, res, next);
+});
+
 
 server.get('/dev', (req, res) => res.send({
     id: config.pkg.name
