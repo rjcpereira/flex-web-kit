@@ -1,0 +1,9 @@
+:root {
+    --base-bg: #fff;
+    --base-color: #222;
+    --placeholder-color: #333; 
+    .dark {
+        --base-bg: #222;
+        --base-color: #fff;
+    }
+}
