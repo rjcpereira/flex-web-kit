@@ -40,9 +40,11 @@ module.exports = ({ next, layouts, compile }) => {
         <html>
             <head>
                 <title></title>
-                <script src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
-                <script src="${config.base}/scripts/handlebars.js?v=${config.pkg.version}"></script>
-                <link href="${config.base}/styles/main.css?v=${config.pkg.version}"/>
+                <meta name="version" content="${config.pkg.version}">
+                <meta name="viewport" content="width=device-width,initial-scale=1">
+                <script type="application/javascript" src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
+                <script type="application/javascript" src="${config.base}/scripts/handlebars.js?v=${config.pkg.version}"></script>
+                <link rel="stylesheet" href="${config.base}/styles/main.css?v=${config.pkg.version}">
             </head>
             <body>${body}</body>
         </html>`;
