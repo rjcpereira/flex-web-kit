@@ -1,4 +1,4 @@
-const config = require('flex-kit/builder/config'),
+const config = require('flex-web-kit/builder/config'),
     express = require('express'),
     colors = require('colors'),
     server = express();

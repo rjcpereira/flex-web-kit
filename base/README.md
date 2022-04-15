@@ -1,4 +1,4 @@
-# flex-kit
+# flex-web-kit
 
 ## Run in development mode
 

@@ -1,4 +1,4 @@
-# flex-kit
+# flex-web-kit
 
 Create static SSR websites with reactivity on the client
 
@@ -6,11 +6,11 @@ Create static SSR websites with reactivity on the client
 
 ## Install
 
-`npm i flex-kit`
+`npm i flex-web-kit`
 
 ### Dependencies
 
-`flex-kit` uses `gulp`, it's probably required to install it globally
+`flex-web-kit` uses `gulp`, it's probably required to install it globally
 
 `npm i -g gulp`
 
