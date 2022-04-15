@@ -42,7 +42,7 @@ module.exports = ({ next, layouts, compile }) => {
                 <title></title>
                 <script src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
                 <script src="${config.base}/scripts/handlebars.js?v=${config.pkg.version}"></script>
-                <link href="${config.base}/scripts/main.css?v=${config.pkg.version}"/>
+                <link href="${config.base}/styles/main.css?v=${config.pkg.version}"/>
             </head>
             <body>${body}</body>
         </html>`;
