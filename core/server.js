@@ -4,13 +4,11 @@ const config = require('flex-web-kit/builder/config'),
     colors = require('colors'),
     server = express();
 
-utils.folders('dist/web', (name, path) => {
+utils.folders('dist/middlewares', (name, path) => {
     console.log(path)
     const file = require(path);
     console.log(file)
-
-
-    //const use = (req, res, next) => server.use(req, res, next);
+    file && server.use(file);
 });
 
 

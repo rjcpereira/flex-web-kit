@@ -12,7 +12,6 @@ const build = {
         'routes.parse',
         'processed.templates',
         'api.parse',
-        'middlewares.parse',
         'server.parse',
         'handlebars.copy',
         'assets.copy'
