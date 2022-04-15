@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "flex-web-kit",
   "main": "builder/index.js",
+  "scripts": {
+    "test": "./core/test",
+    "postinstall": "node postinstall"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rjcpereira/flex-web-kit.git"

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+rm -rf dist;
+
+mkdir dist;
+
+cd dist;
+
+npm i --prefix ./ https://github.com/rjcpereira/flex-web-kit.git;
+
+cp -r node_modules/flex-web-kit/base/. ./;
+
+gulp dev;

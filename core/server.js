@@ -3,8 +3,6 @@ const config = require('flex-web-kit/builder/config'),
     colors = require('colors'),
     server = express();
 
-console.log(colors.red(config));
-
 //const use = (req, res, next) => server.use(req, res, next);
 
 server.get('/dev', (req, res) => res.send({
