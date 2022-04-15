@@ -39,7 +39,7 @@ module.exports = ({ next, layouts, compile }) => {
     const html = `<!DOCTYPE html>
         <html>
             <head>
-                <title>${title}</title>
+                <title></title>
                 <script src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
                 <script src="${config.base}/scripts/handlebars.js?v=${config.pkg.version}"></script>
                 <link href="${config.base}/scripts/main.css?v=${config.pkg.version}"/>
