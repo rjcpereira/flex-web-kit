@@ -14,6 +14,7 @@ const build = {
         'api.parse',
         'server.parse',
         'handlebars.copy',
+        'handlebars.parse',
         'assets.copy'
     ],
     dest: {
