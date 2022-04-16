@@ -48,9 +48,10 @@ const watching = next => {
 };
 
 const prepare = html => !html ? '' : html
-    .replace(/\r/g, ' ')
-    .replace(/\n/g, ' ')
-    .replace(/ {2,}/g, ' ');
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\t/g, '')
+    .replace(/\r/g, '')
+    .replace(/\n/g, '');
 
 module.exports = {
     log,
