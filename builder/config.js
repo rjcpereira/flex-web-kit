@@ -25,7 +25,7 @@ const build = {
 
 const port = 3000;
 
-const base = `http://localhost:${port}`;
+const base = process.env.BASE_URL || `http://localhost:${port}`;
 
 const nodemon = {
     script: `./dist/server.js`,

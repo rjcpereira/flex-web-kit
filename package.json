@@ -5,6 +5,7 @@
   "main": "builder/index.js",
   "scripts": {
     "test": "./core/test",
+    "preview": "./core/preview",
     "postinstall": "node postinstall"
   },
   "repository": {

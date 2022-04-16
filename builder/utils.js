@@ -36,7 +36,7 @@ const listening = dev => {
     line();
     log(`starting server in '${colors.cyan(!dev ? 'production' : 'development')}' mode`);
     line();
-    log(colors.yellow('http://localhost:3000'));
+    log(colors.yellow(process.env.BASE_URL || 'http://localhost:3000'));
     line();
 };
 
