@@ -15,6 +15,7 @@ const build = {
         'server.parse',
         'handlebars.copy',
         'handlebars.parse',
+        'templates.copy',
         'assets.copy'
     ],
     dest: {

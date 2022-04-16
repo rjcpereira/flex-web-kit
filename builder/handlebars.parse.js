@@ -5,9 +5,9 @@ shell = require('child_process').execSync;
 
 module.exports = ({ next, views, layouts }) => {
 
-    shell('mkdir -p ./dist/templates');
+    shell('mkdir -p ./dist/temp/templates');
 
-    for(let key in views) shell(`handlebars ${views[key].path} -f ./dist/templates/${key}.js`);
+    for(let key in views) shell(`handlebars ${views[key].path} -f ./dist/temp/templates/${key}.js`);
 
     next();
 
