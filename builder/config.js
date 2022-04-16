@@ -14,13 +14,14 @@ const build = {
         'api.parse',
         'server.parse',
         'handlebars.copy',
+        'handlebars.precompile',
         'handlebars.parse',
-        'templates.copy',
         'assets.copy'
     ],
     dest: {
         server: 'dist',
-        web: 'dist/web'
+        web: 'dist/web',
+        temp: 'dist/temp'
     },
     module: `node_modules/${pkg.name}`
 };

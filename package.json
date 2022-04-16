@@ -1,6 +1,6 @@
 {
   "name": "flex-web-kit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "flex-web-kit",
   "main": "builder/index.js",
   "scripts": {
@@ -42,8 +42,5 @@
     "handlebars": "^4.7.7",
     "nodemon": "^2.0.15",
     "sass": "^1.50.0"
-  },
-  "devDependencies": {
-    "vercel": "^24.1.0"
   }
 }
