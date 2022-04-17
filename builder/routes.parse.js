@@ -37,7 +37,7 @@ module.exports = ({ next, layouts, compile, views }) => {
     });
 
     const templates = [];
-    if(views) for(let key in views) templates.push(`<script type="application/javascript" src="${config.base}/scripts/templates/${key}.js?v=${config.pkg.version}"></script>`)
+    if(views) for(let key in views) templates.push(`<script type="application/javascript" defer src="${config.base}/scripts/templates/${key}.js?v=${config.pkg.version}"></script>`)
 
     const html = `<!DOCTYPE html>
         <html>
