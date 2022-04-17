@@ -1,4 +1,6 @@
-flex.views = new Proxy({}, {
+let views = Handlebars.templates || Handlebars.partials || {};
+
+flex.views = new Proxy(views, {
     get(target, prop) {
         return target[prop];
     },

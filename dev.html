@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <script>
+
+        let foo = {};
+
+        let cenas = new Proxy(foo, {
+            get(target, prop) {
+                return target[prop];
+            },
+            set(target, prop, value) {
+                target[prop] = value;
+                return true;
+            }
+        });
+
+        cenas.ol = 234;
+
+        console.log('foo', foo)
+        console.log('cenas', cenas)
+
+    </script>
+</body>
+
+</html>
