@@ -51,6 +51,7 @@ module.exports = ({ next, layouts, compile, views }) => {
                 <script type="application/javascript" src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
                 <script type="application/javascript">flex.data = ${JSON.stringify(data)};</script>
                 <link rel="stylesheet" href="${config.base}/styles/main.css?v=${config.pkg.version}">
+                <script type="application/javascript" src="${config.base}/scripts/layouts/base.js?v=${config.pkg.version}"></script>
                 ${templates.join('')}
             </head>
             <body>${body}</body>
