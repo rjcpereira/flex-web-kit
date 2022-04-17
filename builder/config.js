@@ -7,15 +7,17 @@ const build = {
     tasks: [
         'styles.parse',
         'scripts.parse',
-        'views.parse',
-        'layouts.parse',
+        'views.prepare',
+        'layouts.prepare',
         'routes.parse',
         'processed.templates',
         'api.parse',
         'server.parse',
         'handlebars.copy',
-        'handlebars.precompile',
-        'handlebars.parse',
+        'layouts.precompile',
+        'layouts.parse',
+        'views.precompile',
+        'views.parse',
         'assets.copy'
     ],
     dest: {

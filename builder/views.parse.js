@@ -1,19 +1,11 @@
-const { folders, routify, prepare } = require('./utils');
+const config = require('./config'),
+    gulp = require('gulp'),
+    babel = require('gulp-babel'),
+    replace = require('gulp-replace');
 
-module.exports = ({ next, views }) => {
-
-    folders('views', (item, path, file) => {
-        const key = routify('views', item, path);
-        if(key) views[key] = {
-            key,
-            path,
-            name: item,
-            view: prepare(file)
-        };
-    }, true);
-
-    next();
-
-    /* shell(`handlebars layouts/base.hbs -f ./dist/web/scripts/templates.js`, next); */
-
-};
+module.exports = () => gulp.src(['dist/temp/templates/**/*.js'])
+    .pipe(replace('.hbs', ''))
+    .pipe(replace(', templates = Handlebars.templates = Handlebars.templates || {}', ''))
+    .pipe(replace('templates[', 'flex.views['))
+    .pipe(babel())
+    .pipe(gulp.dest(`${config.build.dest.web}/scripts/templates`));
