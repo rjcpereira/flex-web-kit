@@ -10,9 +10,10 @@ module.exports = ({ next, views }) => {
 
     for (let key in views) {
         console.log(key, views[key])
-        const file = views[key].path.replace(views[key].name, views[key].key + '.hbs');
+        const file = views[key].path.replace(views[key].name, key + '.hbs');
         console.log(file)
-        shell(`mv ${views[key].path} ${file} handlebars ${file} -f ./${config.build.dest.temp}/templates/${key}.js`);
+        shell(`mv ${views[key].path} ${file}`);
+        shell(`handlebars ${file} -f ./${config.build.dest.temp}/templates/${key}.js`);
     }
 
     next();
