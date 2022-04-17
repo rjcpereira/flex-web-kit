@@ -3,7 +3,7 @@ const config = require('./config'),
 
 /* const { log, folders } = require('./utils'); */
 
-module.exports = ({ next, layouts, compile }) => {
+module.exports = ({ next, layouts, compile, views }) => {
 
     const render = compile(layouts.base.view);
 
@@ -36,6 +36,9 @@ module.exports = ({ next, layouts, compile }) => {
         }
     });
 
+    const templates = [];
+    if(views) for(let key in views) templates.push(`<script type="application/javascript" src="${config.base}/scripts/templates/${key}.js?v=${config.pkg.version}"></script>`)
+
     const html = `<!DOCTYPE html>
         <html>
             <head>
@@ -45,6 +48,7 @@ module.exports = ({ next, layouts, compile }) => {
                 <script type="application/javascript" src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
                 <script type="application/javascript" src="${config.base}/scripts/handlebars.js?v=${config.pkg.version}"></script>
                 <link rel="stylesheet" href="${config.base}/styles/main.css?v=${config.pkg.version}">
+                ${templates.join('')}
             </head>
             <body>${body}</body>
         </html>`;
