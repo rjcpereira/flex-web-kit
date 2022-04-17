@@ -7,6 +7,7 @@ module.exports = ({ next, views }) => {
         if(key) views[key] = {
             key,
             path,
+            name: item,
             view: prepare(file)
         };
     }, true);
