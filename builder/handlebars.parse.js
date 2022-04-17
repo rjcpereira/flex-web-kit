@@ -5,6 +5,6 @@ const config = require('./config'),
 
 module.exports = () => gulp.src(['dist/temp/templates/**/*.js'])
     .pipe(replace('.hbs', ''))
-    .pipe(replace('Handlebars', 'flex'))
+    .pipe(replace('templates = Handlebars.templates =', 'templates = flex.views ='))
     .pipe(babel())
     .pipe(gulp.dest(`${config.build.dest.web}/scripts/templates`));
