@@ -1,5 +1,5 @@
-const config = require('flex-web-kit/builder/config'),
-    utils = require('flex-web-kit/builder/utils'),
+const config = require('flex-web-kit/core/config'),
+    utils = require('flex-web-kit/core/utils'),
     express = require('express'),
     colors = require('colors'),
     server = express();

@@ -1,6 +1,6 @@
 {
   "name": "flex-web-kit",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "flex-web-kit",
   "main": "core/index.js",
   "scripts": {
