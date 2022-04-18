@@ -5,10 +5,7 @@ const getAll = (selector, element) => (element || document).querySelectorAll(sel
 const createElement = (tag, attrs, parent) => {
     if(!tag) return;
     const element = document.createElement(tag || 'div');
-    if (attrs) {
-        for (let key in attrs) element.setAttribute(key, attrs[key]);
-        if (attrs.html) element.innerHTML = attrs.html;
-    }
+    if (attrs) for (let key in attrs) key != 'html' ? element.setAttribute(key, attrs[key]) : (element.innerHTML = attrs.html);
     parent && parent.appendChild(element);
     return element;
 };

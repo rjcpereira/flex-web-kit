@@ -68,8 +68,8 @@ module.exports = ({ next, layouts, compile, views }) => {
                             document.head.appendChild(script);
                         });
                     };
+                    getViews(${JSON.stringify(templates) || {}});
                     window.addEventListener('load', () => {
-                        getViews(${JSON.stringify(templates) || {}});
                         flex.ready = true;
                     });
                 </script>
