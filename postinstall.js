@@ -1,12 +1,22 @@
 const shell = require('child_process').exec;
 
-shell(`for dir in \
+shell(`
+install=0
+
+for dir in \
   "assets" \
   "layouts" \
+  "pages"  \
+  "styles"  \
   "pages" 
 do
   if ! [ -d "$dir" ]; then
-    cp -r base/$dir ${process.env.INIT_CWD}
+    install=1
+    break
   fi
-done`);
+done
 
+if [ install == 1 ]; then
+  cp -r base/. ${process.env.INIT_CWD}
+fi
+`);

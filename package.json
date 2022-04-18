@@ -1,12 +1,13 @@
 {
   "name": "flex-web-kit",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "flex-web-kit",
   "main": "builder/index.js",
   "scripts": {
     "test": "./core/test",
     "preview": "./core/preview",
-    "postinstall": "node postinstall"
+    "postinstall": "node postinstall",
+    "update": "git push && npm publish"
   },
   "repository": {
     "type": "git",
