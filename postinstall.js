@@ -6,11 +6,9 @@ fs.access(`${process.env.INIT_CWD}/gulpfile.js`, fs.F_OK, err => (err && shell(`
 
 const gitignore = `${process.env.INIT_CWD}/.gitignore`;
 
-fs.access(gitignore, err => (err && fs.writeFileSync(gitignore, `
-# folders
+fs.access(gitignore, err => (err && fs.writeFileSync(gitignore, `# folders
 node_modules
 dist
 
 # files
-package-lock.json
-`, 'utf-8')));
+package-lock.json`, 'utf-8')));
