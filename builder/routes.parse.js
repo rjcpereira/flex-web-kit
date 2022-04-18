@@ -40,9 +40,8 @@ module.exports = ({ next, layouts, compile, views }) => {
 
     const body = render(data);
 
-    const templates = [];
-    if(views) for(let key in views) templates.push(`<script type="application/javascript" defer src="${config.base}/scripts/views/${key}.js?v=${config.pkg.version}"></script>`)
-
+    const templates = Object.keys(views);
+    
     const html = `<!DOCTYPE html>
         <html>
             <head>
@@ -51,18 +50,31 @@ module.exports = ({ next, layouts, compile, views }) => {
                 <meta name="viewport" content="width=device-width,initial-scale=1">
                 <script type="application/javascript" src="${config.base}/scripts/handlebars.js?v=${config.pkg.version}"></script>
                 <script type="application/javascript" src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
-                <script type="application/javascript">flex.data = flex.utils.reactive(${JSON.stringify(data) || {}}, () => {
-                    clearTimeout(window.flex._delay); 
-                    window.flex._delay = setTimeout(() => {
-                        if(!document.body) return;
-                        let html = document.createElement('body');
-                        html.innerHTML = flex.views.base(flex.data);
-                        flex.dom.mergeElements(document.body, html);
-                    }, 50); 
-                });</script>
+                <script type="application/javascript">
+                    flex.data = flex.utils.reactive(${JSON.stringify(data) || {}}, () => {
+                        clearTimeout(window.flex._delay); 
+                        window.flex._delay = setTimeout(() => {
+                            if(!flex.ready) return;
+                            let html = document.createElement('body');
+                            html.innerHTML = flex.views.base(flex.data);
+                            flex.dom.mergeElements(document.body, html);
+                        }, 50); 
+                    });
+                    const getViews = views => {
+                        if(!views || !views.length) return;
+                        views.forEach(key => {
+                            const script = document.createElement('script');
+                            script.src = \`${config.base}/scripts/views/\${key}.js?v=${config.pkg.version}\`;
+                            document.head.appendChild(script);
+                        });
+                    };
+                    window.addEventListener('load', () => {
+                        getViews(${JSON.stringify(templates) || {}});
+                        flex.ready = true;
+                    });
+                </script>
                 <link rel="stylesheet" href="${config.base}/styles/main.css?v=${config.pkg.version}">
                 <script type="application/javascript" src="${config.base}/scripts/views/base.js?v=${config.pkg.version}"></script>
-                ${templates.join('')}
             </head>
             <body>${body}</body>
         </html>`;
