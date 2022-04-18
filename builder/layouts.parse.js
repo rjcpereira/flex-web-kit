@@ -8,4 +8,4 @@ module.exports = () => gulp.src(['dist/temp/layouts/**/*.js'])
     .pipe(replace(', templates = Handlebars.templates = Handlebars.templates || {}', ''))
     .pipe(replace('templates[', 'flex.views['))
     .pipe(babel())
-    .pipe(gulp.dest(`${config.build.dest.web}/scripts/layouts`));
+    .pipe(gulp.dest(`${config.build.dest.web}/scripts/views`));

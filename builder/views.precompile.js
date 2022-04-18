@@ -1,20 +1,21 @@
 const config = require('./config'),
-    colors  = require('colors'),
+    fs = require('fs'),
+    gulp = require('gulp'),
+    colors = require('colors'),
     shell = require('child_process').execSync;
+
+const { prepare } = require('./utils');
 
 module.exports = ({ next, views }) => {
 
     shell(`mkdir -p ./${config.build.dest.temp}/templates/precompiled`);
     shell(`mkdir -p ./${config.build.dest.temp}/templates/compiled`);
 
-    console.log(colors.red('TODO'), colors.yellow('minify html/hbs templates before'));
-
     for (let key in views) {
-        const file = `./${config.build.dest.temp}/templates/precompiled/${views[key].path.replace(views[key].name, key + '.hbs')}`;
-        console.log(views[key].path)
-        console.log(file)
-        console.log(views[key])
+        const file = `./${config.build.dest.temp}/templates/precompiled/${key}.hbs`;
         shell(`cp ${views[key].path} ${file}`);
+        const template = fs.readFileSync(file, 'utf-8');
+        fs.writeFileSync(file, prepare(template), 'utf-8');
         shell(`handlebars ${file} -f ./${config.build.dest.temp}/templates/compiled/${key}.js`);
     }
 
