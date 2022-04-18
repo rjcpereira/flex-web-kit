@@ -52,7 +52,7 @@ const prepare = html => !html ? '' : html
     .replace(/\t/g, '')
     .replace(/\r/g, '')
     .replace(/\n/g, '')
-    .replace(/{{>(.+?)}}/g, (match, path) => `<!-- ${path}:start -->${match}<!-- ${path}:end -->`);
+    .replace(/{{>(.+?)}}/g, (match, path) => `<!-- {{#${path}}} -->${match}<!-- {{/${path}}} -->`);
 
 module.exports = {
     log,
