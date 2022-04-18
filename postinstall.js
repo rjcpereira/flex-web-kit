@@ -10,7 +10,7 @@ for dir in \
   "styles"  \
   "pages" 
 do
-  if ! [ -d "$dir" ]; then
+  if ! [ -d "${process.env.INIT_CWD}/$dir" ]; then
     install=1
     break
   fi
