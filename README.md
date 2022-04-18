@@ -6,7 +6,7 @@ Create static SSR websites with reactivity on the client
 
 ## Install
 
-`npm i flex-web-kit`
+`npm i flex-web-kit@latest`
 
 ### Dependencies
 
