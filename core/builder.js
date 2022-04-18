@@ -62,7 +62,7 @@ const line = () => console.log('\n\r'),
     watch = async () => {
         gulp.series(build, watching, () => nodemon(config.nodemon))();
         return gulp.watch(config.gulp.watch, gulp.series(build, watching));
-    };;
+    };
 
 line();
 log(`building project with ${config.pkg.name} v${config.pkg.version}`);
