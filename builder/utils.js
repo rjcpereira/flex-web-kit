@@ -48,11 +48,11 @@ const watching = next => {
 };
 
 const prepare = html => !html ? '' : html
-    .replace(/\s{2,}/g, ' ')
     .replace(/\t/g, '')
     .replace(/\r/g, '')
     .replace(/\n/g, '')
-    .replace(/{{>(.+?)}}/g, (match, path) => `<!-- {{#${path}}} -->${match}<!-- {{/${path}}} -->`);
+    .replace(/\s{2,}/g, ' ')/* 
+    .replace(/{{>(.+?)}}/g, (match, path) => `<!-- {{#${path}}} -->${match}<!-- {{/${path}}} -->`) */;
 
 module.exports = {
     log,

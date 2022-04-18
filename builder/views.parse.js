@@ -3,7 +3,7 @@ const config = require('./config'),
     babel = require('gulp-babel'),
     replace = require('gulp-replace');
 
-module.exports = () => gulp.src(['dist/temp/templates/**/*.js'])
+module.exports = () => gulp.src(['dist/temp/templates/compiled/**/*.js'])
     .pipe(replace('.hbs', ''))
     .pipe(replace(', templates = Handlebars.templates = Handlebars.templates || {}', ''))
     .pipe(replace('templates[', 'flex.views['))
