@@ -52,9 +52,13 @@ module.exports = ({ next, layouts, compile, views }) => {
                 <script type="application/javascript" src="${config.base}/scripts/handlebars.js?v=${config.pkg.version}"></script>
                 <script type="application/javascript" src="${config.base}/scripts/site.js?v=${config.pkg.version}"></script>
                 <script type="application/javascript">flex.data = flex.utils.reactive(${JSON.stringify(data) || {}}, () => {
-                    let html = document.createElement('body');
-                    html.innerHTML = flex.views.base(flex.data);
-                    flex.dom.mergeElements(document.body, html);
+                    clearTimeout(window.flex._delay); 
+                    window.flex._delay = setTimeout(() => {
+                        if(!document.body) return;
+                        let html = document.createElement('body');
+                        html.innerHTML = flex.views.base(flex.data);
+                        flex.dom.mergeElements(document.body, html);
+                    }, 50); 
                 });</script>
                 <link rel="stylesheet" href="${config.base}/styles/main.css?v=${config.pkg.version}">
                 <script type="application/javascript" src="${config.base}/scripts/views/base.js?v=${config.pkg.version}"></script>
