@@ -1,4 +1,4 @@
-const config = require('./config'),
+const config = require('../core/config'),
     gulp = require('gulp'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean-css'),

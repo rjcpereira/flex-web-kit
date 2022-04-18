@@ -1,4 +1,4 @@
-const config = require('./config'),
+const config = require('../core/config'),
     gulp = require('gulp'),
     babel = require('gulp-babel'),
     wrap = require('gulp-wrap'),

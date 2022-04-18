@@ -41,7 +41,7 @@ const line = () => console.log('\n\r'),
         return (next && next());
     },
     build = gulp.series(...config.build.tasks.map(id => {
-        const task = require(`./${id}`);
+        const task = require(`../builder/${id}`);
         gulp.task(id, next => task({
             ...options,
             next

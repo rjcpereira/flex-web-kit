@@ -1,9 +1,9 @@
-const config = require('./config'),
+const config = require('../core/config'),
     fs = require('fs');
 
-const { prepare } = require('./utils');
+const { prepare } = require('../core/utils');
 
-/* const { log, folders } = require('./utils'); */
+/* const { log, folders } = require('../core/utils'); */
 
 module.exports = ({ next, layouts, compile, views }) => {
 

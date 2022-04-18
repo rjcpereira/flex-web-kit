@@ -1,4 +1,4 @@
-const { folders, routify, prepare } = require('./utils');
+const { folders, routify, prepare } = require('../core/utils');
 
 module.exports = ({ next, views }) => {
 

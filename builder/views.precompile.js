@@ -1,10 +1,10 @@
-const config = require('./config'),
+const config = require('../core/config'),
     fs = require('fs'),
     gulp = require('gulp'),
     colors = require('colors'),
     shell = require('child_process').execSync;
 
-const { prepare } = require('./utils');
+const { prepare } = require('../core/utils');
 
 module.exports = ({ next, views }) => {
 
